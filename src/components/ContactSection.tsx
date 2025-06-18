@@ -3,7 +3,7 @@ import { Mail, Phone, MapPin, Clock, Linkedin, Instagram } from 'lucide-react';
 
 const ContactSection: React.FC = () => {
   return (
-    <section id="contato" className="py-20 bg-blue-900">
+    <section id="contato" className="py-20 bg-[#02155a]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-white mb-4">CONTATO</h2>
@@ -11,21 +11,7 @@ const ContactSection: React.FC = () => {
         </div>
 
         <div className="grid lg:grid-cols-2 gap-12">
-          {/* Map */}
-          <div className="h-96 bg-gray-300 rounded-lg overflow-hidden">
-            <div className="w-full h-full bg-gradient-to-br from-blue-200 to-blue-100 relative">
-              <div className="absolute inset-4 bg-white/20 rounded"></div>
-              <div className="absolute top-8 left-8 bg-red-500 w-4 h-4 rounded-full"></div>
-              <div className="absolute top-12 right-12 bg-blue-500 w-3 h-3 rounded-full"></div>
-              <div className="absolute bottom-16 left-1/3 bg-green-500 w-2 h-2 rounded-full"></div>
-              <div className="flex items-center justify-center h-full">
-                <div className="text-center text-gray-600">
-                  <MapPin className="mx-auto mb-2" size={48} />
-                  <p className="font-semibold">Araguaína, TO</p>
-                </div>
-              </div>
-            </div>
-          </div>
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15832.75394075393!2d-48.251510368703634!3d-7.219329484101671!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x92d911fe4ffae24d%3A0xfdedd75259682f54!2sLot.%20Nova%20Araguaina%2C%20Aragua%C3%ADna%20-%20TO!5e0!3m2!1spt-BR!2sbr!4v1750235605459!5m2!1spt-BR!2sbr" width="600" height="800" style={{ border: 0 }} allowFullScreen loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
 
           {/* Contact Info */}
           <div className="bg-black rounded-lg p-8">
@@ -82,6 +68,16 @@ const ContactSection: React.FC = () => {
                 placeholder="Telefone"
                 className="w-full px-4 py-3 rounded bg-white text-gray-800 placeholder-gray-500"
               />
+              <input
+                type="email"
+                placeholder="Endereço de e-mail"
+                className="w-full px-4 py-3 rounded bg-white text-gray-800 placeholder-gray-500"
+              />
+              <textarea
+                placeholder="Mensagem"
+                rows={4}
+                className="w-full px-4 py-3 rounded bg-white text-gray-800 placeholder-gray-500 resize-none"
+              ></textarea>
             </div>
           </div>
         </div>

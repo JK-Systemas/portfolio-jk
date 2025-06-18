@@ -8,11 +8,11 @@ interface HeaderProps {
   scrollToSection: (sectionId: string) => void;
 }
 
-const Header: React.FC<HeaderProps> = ({ 
-  activeSection, 
-  isMenuOpen, 
-  setIsMenuOpen, 
-  scrollToSection 
+const Header: React.FC<HeaderProps> = ({
+  activeSection,
+  isMenuOpen,
+  setIsMenuOpen,
+  scrollToSection
 }) => {
   const menuItems = [
     { id: 'inicio', label: 'Início' },
@@ -23,16 +23,18 @@ const Header: React.FC<HeaderProps> = ({
   ];
 
   return (
-    <header className="bg-blue-900 border-b border-blue-800 sticky top-0 z-50">
+    <header className="bg-[#02155a] border-b border-blue-800 sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4">
           {/* Logo */}
-          <div className="flex items-center space-x-2">
-            <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center">
-              <div className="w-6 h-6 bg-blue-900 rounded-full relative">
-                <div className="absolute inset-1 bg-white rounded-full"></div>
-              </div>
-            </div>
+          <div className="flex items-center space-x-4">
+            {/* Imagem da logo */}
+            <img
+              src="/logo.jpg" // Certifique-se de ter uma imagem aqui
+              alt="Logo JK Sistemas"
+              className="h-10 w-auto object-contain"
+            />
+            {/* Texto do nome da empresa */}
             <div className="text-white font-bold text-xl">
               JK - SISTEMAS
             </div>
@@ -44,9 +46,8 @@ const Header: React.FC<HeaderProps> = ({
               <button
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
-                className={`text-white hover:text-yellow-400 transition-colors underline ${
-                  activeSection === item.id ? 'text-yellow-400' : ''
-                }`}
+                className={`text-white hover:text-yellow-400 transition-colors ${activeSection === item.id ? 'text-yellow-400 underline' : 'no-underline'
+                  }`}
               >
                 {item.label}
               </button>
@@ -70,7 +71,7 @@ const Header: React.FC<HeaderProps> = ({
                 <button
                   key={item.id}
                   onClick={() => scrollToSection(item.id)}
-                  className="text-white hover:text-yellow-400 transition-colors text-left underline"
+                  className="text-white hover:text-yellow-400 transition-colors text-left"
                 >
                   {item.label}
                 </button>
